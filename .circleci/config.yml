@@ -6,9 +6,8 @@ orbs:
 workflows:
   deploy-master:
     jobs:
-      build:
-        working_directory: ~/repo
-
-        steps:
-          - checkout
-          - run: echo hello world
+      - build:
+          working_directory: ~/repo
+          steps:
+            - checkout
+            - run: echo hello world

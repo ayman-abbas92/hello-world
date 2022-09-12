@@ -3,11 +3,14 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 
+jobs:
+  build:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: echo hello world
+
 workflows:
   deploy-master:
     jobs:
-      - build:
-          working_directory: ~/repo
-          steps:
-            - checkout
-            - run: echo hello world
+      - build

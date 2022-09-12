@@ -2,8 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: cimg/node:12.13.1-stretch
+    orbs:
+      node: circleci/node@4.7
 
     working_directory: ~/repo
 

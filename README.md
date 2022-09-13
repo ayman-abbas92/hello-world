@@ -1,1 +1,1 @@
-# hello-world
+# hello-world [![CircleCI](https://dl.circleci.com/status-badge/img/gh/ayman-abbas92/hello-world/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ayman-abbas92/hello-world/tree/main)

@@ -1,18 +1,35 @@
 version: "2.1"
+
 orbs:
   node: circleci/node@5.0.2
-jobs:
-  install-node-example:
+
+executors:
+  default:
     docker:
       - image: "cimg/base:stable"
+
+jobs:
+  install-node:
+    executor: default
     steps:
       - checkout
       - node/install:
           install-yarn: true
           node-version: "16.13"
-      - run: node --version
-      - run: echo Hello World!
+  build:
+    executor: default
+    steps:
+      - run: echo Build
+
+  test:
+    executor: default
+    steps:
+      - run: echo Test
+
 workflows:
-  test_my_app:
+  build-and-test:
     jobs:
-      - install-node-example
+      - build
+      - test:
+        requires:
+          - build
